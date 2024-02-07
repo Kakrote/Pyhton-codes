@@ -7,3 +7,7 @@ print(var3)
 a=int(var1)
 b=int(var2)
 print(a+b) # now we will get the 50 as answer.
+# taking input from user:
+num=int(input("Enter the number "))
+print(num)
+print(type(num))
