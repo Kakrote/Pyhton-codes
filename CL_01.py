@@ -10,4 +10,4 @@ print(a+b) # now we will get the 50 as answer.
 # taking input from user:
 num=int(input("Enter the number "))
 print(num)
-print(type(num))
+print(type(num ))
