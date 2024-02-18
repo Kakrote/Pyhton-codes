@@ -24,7 +24,7 @@ def scoring(player1,player2):
         score_p2+=1
     elif player1=='p'or player1=='P'and player2=="sciscers":
         score_p2+=1
-    elif player1=='p'or player1=='P'and player2=="paper":
+    elif player1=='p'or player1=='P'and player2=="paper": 
         score_p2+=1
         score_p1+=1
     elif player1=='c'or player1=='C'and player2=="stone":
