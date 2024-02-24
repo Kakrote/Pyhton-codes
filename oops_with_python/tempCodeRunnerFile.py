@@ -1,0 +1,1 @@
+self.email=f"{self.fname}.{self.lname}@gmail.com"
