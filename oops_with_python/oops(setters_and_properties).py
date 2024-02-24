@@ -32,5 +32,7 @@ print(a.email)
 a.email="rohit.rajput@gmail.com"        
 print(a.fname)
 print(a.email)
-del a.email
+del a.email # will dete the email
+print(a.email)
+a.email="anshul.pundir@gmail.com" # will create a new email
 print(a.email)
