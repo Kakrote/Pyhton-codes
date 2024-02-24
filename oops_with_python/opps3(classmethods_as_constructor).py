@@ -10,4 +10,4 @@ class student:
         # return cls(param[0],param[1])
         return cls(*string.split("-"))
 Anshul=student.from_str("Anshul-13")
-print(Anshul.details())
+print(Anshul.details())  
