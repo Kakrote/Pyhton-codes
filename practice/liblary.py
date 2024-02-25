@@ -1,3 +1,4 @@
+import time as t
 class main_library:
     def __init__(self,name_of_library):
         # self.n=no_books
@@ -10,12 +11,31 @@ class main_library:
         for i in range(n):
             books=f.write(input()+"\n")
         f.close()
-    def lend_book():
-        pass
+    def lend_book(self):
+        current_time = t.asctime(t.localtime(t.time()))
+        book = input("Enter the name of the book: ")
+
+        found = False
+
+        with open("lib.txt", "r") as f:
+            lines = f.readlines()
+            for line in lines:
+                if book in line:
+                    with open("lend.txt", "a") as f1:
+                        f1.write(f"{book}\t{current_time}\n")
+                    print("Successful")
+                    found = True
+                    break
+
+            if not found:
+                print("Book not found! Sorry")
     def return_book():
         pass
     def all_books_avilable(slef):
-        pass
+        f=open("lib.txt","+r")
+        data=f.read()
+        print(data)
+        f.close()
 def menu():
     # n=int(input("Enter the no of books avilable in the liblary  "))
     lib=main_library("Anshul's Collections")
