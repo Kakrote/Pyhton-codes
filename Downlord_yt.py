@@ -1,7 +1,11 @@
 from pytube import YouTube as yt
 try:
-    link=yt("") # paste link here;
-    video=link.streams.get_highest_resolution()
+    link=yt("https://youtu.be/cCMoMBZceQQ?si=NLvEzVCCkoK-LluA") # paste link here;
+    n=int(input("Enter 1 for vedio and 2 for audio only"))
+    if n==2:
+        video=link.streams.get_audio_only()
+    else:
+        video=link.streams.get_highest_resolution()
     import os
     os.chdir("C://Users//anshu//Downloads")
     # print(os.listdir())
