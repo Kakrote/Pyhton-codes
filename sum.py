@@ -38,7 +38,7 @@ class App(ctk.CTk):
 
 		# Name Entry Field
 		self.nameEntry = ctk.CTkEntry(self,
-						placeholder_text="Teja")
+						placeholder_text="Teja",font=("times new roman", 20))
 		self.nameEntry.grid(row=0, column=1,
 							columnspan=3, padx=20,
 							pady=20, sticky="ew")
