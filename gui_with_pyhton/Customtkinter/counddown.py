@@ -1,5 +1,5 @@
 import tkinter as tk
-import time
+# import time
 
 class CountdownTimerApp:
     def __init__(self, root, seconds):

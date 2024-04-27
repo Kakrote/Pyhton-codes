@@ -1,0 +1,57 @@
+import customtkinter as ctkt
+
+class LeaderboardFrame(ctkt.CTkFrame):
+    def __init__(self, master, data=[], title="Leaderboard", font_size=14, width=400, height=400):
+        super().__init__(master, width=width, height=height)
+
+        self.title_label = ctkt.CTkLabel(self, text=title, pady=10)
+        self.title_label.pack(fill="x")
+
+        self.leaderboard_canvas = ctkt.CTkCanvas(self, width=width-20, height=height-50)
+        self.leaderboard_canvas.pack(fill="both", expand=True)
+
+        self.scrollbar = ctkt.CTkScrollbar(self, command=self.leaderboard_canvas.yview)
+        self.scrollbar.pack(side="right", fill="y")
+        self.leaderboard_canvas.configure(yscrollcommand=self.scrollbar.set)
+
+        self.leaderboard_frame = ctkt.CTkFrame(self.leaderboard_canvas, width=width-40)
+        self.leaderboard_frame.pack(fill="both", expand=True)
+
+        self.data = data
+        self.display_leaderboard()
+
+    def display_leaderboard(self):
+        self.leaderboard_frame.destroy()  # Clear previous entries
+        self.leaderboard_frame = ctkt.CTkFrame(self.leaderboard_canvas, width=self.leaderboard_frame.winfo_width())
+        self.leaderboard_frame.pack(fill="both", expand=True)
+
+        if not self.data:
+            # Handle empty data case
+            empty_label = ctkt.CTkLabel(self.leaderboard_frame, text="No data available", text_font=(None, 12))
+            empty_label.pack(pady=20)
+            return
+
+        y_pos = 0
+        for i, (name, score) in enumerate(self.data):
+            rank_label = ctkt.CTkLabel(self.leaderboard_frame, text=f"{i+1}.", text_font=(None, 12))
+            rank_label.pack(side="left", padx=5, pady=y_pos)
+
+            name_label = ctkt.CTkLabel(self.leaderboard_frame, text=name, text_font=(None, 12), width=20)
+            name_label.pack(side="left", padx=10, pady=y_pos)
+
+            score_label = ctkt.CTkLabel(self.leaderboard_frame, text=str(score), text_font=(None, 12), width=10)
+            score_label.pack(side="right", padx=5, pady=y_pos)
+
+            y_pos += 20
+
+        # Update canvas viewable area (optional, adjust as needed)
+        self.leaderboard_canvas.configure(scrollregion=self.leaderboard_canvas.bbox("all"))
+
+    def update_data(self, new_data):
+        self.data = new_data
+        self.display_leaderboard()
+
+# Example usage
+leaderboard_data = [("Alice", 1000), ("Bob", 800), ("Charlie", 600)]
+leaderboard_frame = LeaderboardFrame(master=None, data=leaderboard_data, title="High Scores")
+leaderboard_frame.pack()
