@@ -1,6 +1,6 @@
 #   Program using IN operator
-details=['Anshul','MCA','B','13']
-frinds=["Aman","Nikhil","Mandeep","Mohit"]
+details=['Neha bisht','MCA','B','45']
+frinds=["Raj","Heansj","Mandeep","Mohit"]
 print(frinds)
 frn=input("Enter the name of the frind-  ")
 if frn in frinds:

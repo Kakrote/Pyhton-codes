@@ -1,4 +1,4 @@
-details=['Anshul','MCA','B','13']
+details=['Neha bisht','MCA','B','45']
 class Phone:
     def __init__(self,brand,modal):
         self.brand=brand
@@ -15,7 +15,7 @@ class Camera:
 class SmartPhone(Phone,Camera):
     def __init__(self, brand, modal):
         super().__init__(brand, modal) # calls the constructer of the Phone class 
-        self.brand='sony'
+        self.brand='Mi'
         Camera.__init__(self,self.brand) # calls the constructer of the Camera class
     def music(self):
         print('playing music....')

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-details=['Anshul','MCA','B','13']
+details=['Neha bisht','MCA','B','45']
 
-data = np.array([["Anshul", 'MCA', 13], ['Aman', "BBA", 16], ["NIkhil", "MBA", 19]])
+data = np.array([["Neha", 'MCA', 45], ['Nidi', "BBA", 16], ["Shivani", "MBA", 19]])
 
 columns = ['Name', 'Cources', 'Roll_no']
 

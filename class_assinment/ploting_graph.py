@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
-details=['Anshul','MCA','B','13']
+details=['Neha bisht','MCA','B','45']
 
 try:
   with open('brnad.csv', 'r') as csvfile:
